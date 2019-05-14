@@ -1,0 +1,7 @@
+<ul class="list_none social_icon">
+<% data.menus.social.socials.each do |key,value| %>
+    <li>
+        <a href="<%= key.link %>" target="_blank"><i class=" fab fa <%= key.icon %>"></i></a>
+    </li>
+<% end %>
+</ul>

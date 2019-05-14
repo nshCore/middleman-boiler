@@ -1,0 +1,25 @@
+{
+    "socials":[
+      {
+        "link": "https://twitter.com/username",
+        "icon": "fa-twitter"
+      },
+      {
+        "link": "https://www.linkedin.com/company/username",
+        "icon": "fa-linkedin"
+      },
+      {
+        "link": "https://medium.com/username",
+        "icon": "fa-medium"
+      },
+      {
+        "link": "https://github.com/username",
+        "icon": "fa-github"
+      },
+      {
+        "link": "https://username.slack.com",
+        "icon": "fa-slack"
+      }
+    ]
+  }
+  

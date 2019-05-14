@@ -1,0 +1,38 @@
+version: '3.4'
+
+services:
+
+  dev:
+    image: ${some-docker-registry.tld}/${some-namespace}/${some-image}:${some-tag}
+    command: ash -c "npm install && npm run middleman:install && npm run middleman:start"
+    volumes:
+       - .:/app
+    ports:
+      - "4567:4567"
+
+  build:
+    image: ${some-docker-registry.tld}/${some-namespace}/${some-image}:${some-tag}
+    command: ash -c "npm install && npm run middleman:install && npm run middleman:build"
+    volumes:
+       - .:/app
+    ports:
+      - "4567:4567"
+
+  test:
+    image: ${some-docker-registry.tld}/${some-namespace}/${some-image}:${some-tag}
+    command: ash -c "npm install && npm run middleman:install && npm run rake:test"
+    volumes:
+      - ./dist:/app
+    ports:
+      - "4567:4567"
+
+  prod:
+    image: atlascityio_buildprodcontiner:latest
+    volumes:
+      - ./dist:/srv
+    ports:
+      - "4567:4567"            
+
+
+do you think the first gen store of value blockchain like bitcoin have a working model that will allow them to servive a 200 yers
+you said there is no magic bullet,  

@@ -1,0 +1,40 @@
+pool:
+  name: Hosted Ubuntu 1604
+steps:
+- task: DockerCompose@0
+  displayName: 'Run Middleman build'
+  inputs:
+    azureSubscription: 'Pay-As-You-Go (${subid})'
+    azureContainerRegistry: '{"loginServer":"${loginserver}", "id" : "/subscriptions/${subid}/resourceGroups/${resource-id}/providers/Microsoft.ContainerRegistry/registries/${regname}"}'
+    dockerComposeCommand: 'up build'
+
+- task: DockerCompose@0
+  displayName: 'Run rake tests'
+  inputs:
+    azureSubscription: 'Pay-As-You-Go (${subid})'
+    azureContainerRegistry: '{"loginServer":"${loginserver}", "id" : "/subscriptions/${subid}/resourceGroups/${resource-id}/providers/Microsoft.ContainerRegistry/registries/${regname}"}'
+    dockerComposeCommand: 'up test'
+
+- task: Docker@0
+  displayName: 'Build site container'
+  inputs:
+    azureSubscription: 'Pay-As-You-Go (${subid})'
+    azureContainerRegistry: '{"loginServer":"${loginserver}", "id" : "/subscriptions/${subid}/resourceGroups/${resource-id}/providers/Microsoft.ContainerRegistry/registries/${regname}"}'
+    buildArguments: '--target build'
+    additionalImageTags: latest
+
+- task: Docker@0
+  displayName: 'Push site container'
+  inputs:
+    azureSubscription: 'Pay-As-You-Go (${subid})'
+    azureContainerRegistry: '{"loginServer":"${loginserver}", "id" : "/subscriptions/${subid}/resourceGroups/${resource-id}/providers/Microsoft.ContainerRegistry/registries/${regname}"}'
+    action: 'Push an image'
+    additionalImageTags: latest
+
+
+- task: AzureWebAppContainer@1
+  displayName: 'Azure Web App on Container Deploy: ${webapp-service-name}'
+  inputs:
+    azureSubscription: 'Pay-As-You-Go (${subid})'
+    appName: ${app-name}
+    containers: '${docker-registry-image-name}'

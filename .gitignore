@@ -1,0 +1,33 @@
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+
+# OS auto generated files
+.localhistory/
+.DS_Store
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+*.lock
+
+
+# Visual Studio 2015/2017 cache/options directory
+.vs/
+
+# Visual Studio 2017 auto generated files
+Generated\ Files/
+
+# Jetbrains settings
+.idea/*
+
+# Middleman build files
+node_modules/*
+.bundle
+.cache
+.sass-cache
+dist/
+.tmp
+

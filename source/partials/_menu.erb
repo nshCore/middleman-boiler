@@ -1,0 +1,19 @@
+<header class="header_wrap fixed-top">
+	<div class="container-fluid">
+		<nav class="navbar navbar-expand-lg"> 
+			<a class="navbar-brand page-scroll animation" href="/" data-animation="fadeInDown" data-animation-delay="1s"> 
+            	<img class="logo_light" src="/assets/images/logo.png" alt="logo" /> 
+            </a>
+            <button class="navbar-toggler animation" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" data-animation="fadeInDown" data-animation-delay="1.1s"> 
+                <span class="ion-android-menu"></span> 
+            </button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav m-auto">
+                    <% data.menus.main.each do |key,value| %>
+                        <li class="animation" data-animation="fadeInDown" data-animation-delay="1.2s"><a class="nav-link page-scroll nav_item" href="<%= value %>"><%= key %></a></li>
+                    <% end %>
+                </ul>
+			</div>
+		</nav>
+	</div>
+</header>

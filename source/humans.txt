@@ -1,0 +1,18 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    James Kirkby james.kirby@atlascity.io
+
+# THANKS
+
+    @initializr for the HTML5BP
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3, Javascript
+    Bulma, Modernizr, Normalize, Normalize
+    Pure Drawer, Middleman, Font Awesome
+    NPM, Webpack
+    Docker

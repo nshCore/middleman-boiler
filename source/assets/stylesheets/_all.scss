@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+// import normalize reset
+@import "~normalize-scss/sass/normalize/import-now";
+
+// import font awesome
+@import "~font-awesome/scss/font-awesome.scss";
+
+@import "~bulma/bulma.sass";
+
+// import style
+@import "_style.scss";
