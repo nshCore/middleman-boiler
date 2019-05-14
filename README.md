@@ -1,6 +1,3 @@
-# atlascity.io
-AtlasCity website
-
 # Installation
 
 The site uses Middleman a ruby based static site generator with a Webpack build system.
